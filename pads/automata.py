@@ -261,12 +261,12 @@ class NFA(FiniteAutomaton):
             if not [c for c in self.alphabet if self.transition(state, c)]:
                 adjectives.append("terminal")
             if not adjectives:
-                print >>output, state
+                print(state, file=output)
             else:
-                print >>output, state, "(" + ", ".join(adjectives) + ")"
+                print("{} (" {} ")".format(state, ", ".join(adjectives), file=output)
             for c in self.alphabet:
                 for neighbor in self.transition(state, c):
-                    print >>output, "  --[" + str(c) + "]-->", neighbor
+                    print("  --[" + str(c) + "]-->{}".format(neighbor), file=output)
 
     def RegExp(self):
         """Convert to regular expression and return as a string.
