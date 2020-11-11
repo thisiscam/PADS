@@ -97,7 +97,7 @@ class RegularLanguage:
     def __nonzero__(self):
         """Is this the empty language?"""
         for x in self.recognizer.states():
-            if x.isfinal():
+            if self.recognizer.isfinal(x):
                 return True
         return False
     
