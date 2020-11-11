@@ -100,7 +100,8 @@ class RegularLanguage:
             if x.isfinal():
                 return True
         return False
-
+    
+    __bool__ = __nonzero__
 
 class FiniteAutomaton:
 
