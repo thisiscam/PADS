@@ -263,7 +263,7 @@ class NFA(FiniteAutomaton):
             if not adjectives:
                 print(state, file=output)
             else:
-                print("{} ( {} )".format(state, ", ".join(adjectives), file=output)
+                print("{} ( {} )".format(state, ", ".join(adjectives)), file=output)
             for c in self.alphabet:
                 for neighbor in self.transition(state, c):
                     print("  --[ {} ]-->{}".format(c, neighbor), file=output)
