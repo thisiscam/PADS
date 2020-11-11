@@ -263,10 +263,10 @@ class NFA(FiniteAutomaton):
             if not adjectives:
                 print(state, file=output)
             else:
-                print("{} (" {} ")".format(state, ", ".join(adjectives), file=output)
+                print("{} ( {} )".format(state, ", ".join(adjectives), file=output)
             for c in self.alphabet:
                 for neighbor in self.transition(state, c):
-                    print("  --[" + str(c) + "]-->{}".format(neighbor), file=output)
+                    print("  --[ {} ]-->{}".format(c, neighbor), file=output)
 
     def RegExp(self):
         """Convert to regular expression and return as a string.
