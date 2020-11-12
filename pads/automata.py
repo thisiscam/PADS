@@ -377,13 +377,13 @@ class RegExp(NFA):
 
     """Convert regular expression to NFA."""
 
-    def __init__(self, expr):
+    def __init__(self, expr, alphabet=tuple()):
         self.expr = expr
         self.pos = 0
         self.nstates = 0
         self.expect = {}
         self.successor = {}
-        self.alphabet = set()
+        self.alphabet = set(alphabet)
         self.initial, penultimate, epsilon = self.expression()
         final = self.newstate(None)
         for state in penultimate:
