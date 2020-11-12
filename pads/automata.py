@@ -41,11 +41,11 @@ class RegularLanguage:
     logical combinations, and subset and equality testing.
     """
 
-    def __init__(self, arg):
+    def __init__(self, arg, alphabet=tuple()):
         if isinstance(arg, FiniteAutomaton):
             self.recognizer = arg
         elif isinstance(arg, (str, unicode)):
-            self.recognizer = RegExp(arg)
+            self.recognizer = RegExp(arg, alphabet=alphabet)
         else:
             raise LanguageError("Unrecognized constructor for RegularLanguage")
 
